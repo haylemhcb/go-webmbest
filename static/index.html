@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>go-webmbest</title>
+<style>
+
+    #anim { display: none;  opacity: 80%; border-radius: 20px;}
+
+    img , anim{
+       border-radius: 40px;
+    }
+
+    #diviframe, iframe {
+      margin: 0 auto;
+      margin-top: 20px;
+      width:  80%;
+      height: 80%;
+      background: #000;
+      color: #fff;
+      opacity: 90%;
+      border-radius: 20px;
+   }
+
+    body {
+        #background: linear-gradient(to right, #00FFC2, #00B4FF);
+        background: url("img/bc.jpg");
+        background-size: auto;
+        background-repeat: repeat;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        color: #fff;
+    }
+    .container {
+        margin: 50px auto;
+        width: 50%;
+    }
+    input[type="file"] {
+        display: none;
+    }
+    .custom-file-upload {
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #030aaa;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    .custom-button {
+        padding: 10px 20px;
+        cursor: pointer;
+        background: linear-gradient(to right, #030aaa, #00B4FF);
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+</style>
+
+
+</head>
+<body>
+<div class="container">
+    <h2>Mejora tus videos  en masa.</h2>
+    <h4>Creado por Haylem Candelario Bauza.</h4>
+
+    <div id="anim"><img src="img/anim.gif"></img></div>
+    <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="document.getElementById('anim').style.display='block';">
+        <label for="file-upload" class="custom-file-upload">
+            Subir Archivos.
+        </label>
+        <input name="file-upload" id="file-upload" type="file" multiple />
+        <br><br>
+        <button  type="submit" class="custom-button">Procesar</button>
+        <form><button  type="submit"  action="/stop" method="post" class="custom-button">Detener</button></form>
+    </form>
+
+
+</div>
+    <div id="diviframe">
+      <iframe src="../output"></iframe>
+    </div>
+
+</body>
+</html>
+
